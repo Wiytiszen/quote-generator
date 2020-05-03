@@ -1,5 +1,5 @@
 import React from "react";
-import {showQuote} from "../store/actions/actionCreators";
+import {fetchPosts} from "../store/actions/actionCreators";
 import {connect} from "react-redux";
 
 const Quote = (props) => {
@@ -8,7 +8,7 @@ const Quote = (props) => {
       <div className="quote-container">
         <h1>
           "{props.quote}"
-          <span className="author">&mdash; Martin</span>
+          <span className="author">&mdash; {props.author}</span>
         </h1>
 
       </div>
@@ -26,7 +26,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return { 
-    showQuote: () => dispatch(showQuote()),
+    showQuote: () => dispatch(fetchPosts()),
 }
 }
 

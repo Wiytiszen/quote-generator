@@ -1,3 +1,7 @@
+
+html {
+  background: #00b0ff;
+}
 .header{
   margin: 2.5rem;
   align-self: baseline;
@@ -27,14 +31,17 @@
 }
 .quote-container{
   background: #ffff;
-  padding: 3rem;
+  padding: 2rem;
+  max-width: 70%;
   color: #00B0FF;
 
 }
 .quote-container h1{
   display:flex;
   flex-direction: column;
+  font-size: 2rem;
 }
+
 .author{
   margin-top:2rem;
 }
