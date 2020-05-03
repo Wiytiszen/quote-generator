@@ -1,4 +1,6 @@
 import React from "react";
+import {showQuote} from "../store/actions/actionCreators";
+import {connect} from "react-redux";
 
 const Quote = (props) => {
   return (
@@ -10,9 +12,22 @@ const Quote = (props) => {
         </h1>
 
       </div>
-      <button> Generate </button>
+      <button onClick ={props.showQuote}> Generate </button>
     </div>
   );
 };
 
-export default Quote;
+const mapStateToProps = (state) => {
+  return {
+    quote: state.quote,
+    author: state.author,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return { 
+    showQuote: () => dispatch(showQuote()),
+}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Quote);
